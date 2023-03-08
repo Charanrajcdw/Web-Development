@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* header section */
+header {
+    background-color: #43123f;
+    font-size: 1.4rem;
+    text-align: center;
+    color: white;
+    padding: 18px;
+}
+
+/* image section */
+#coverImg {
+    width: 100%;
+    height: 100vh;
+}
+  
+/* cards section */
+#cardSection{
+    width:90%;
+    margin:84px auto 0;
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    width: 33%;
+    text-align: left;
+    padding: 5px 15px;
+    margin-bottom: 75px;
+}
+
+.cityDescription{
+    font-weight: 300;
+    font-size: 36px;
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+.cityName{
+    margin: 13px 0;
+    font-size: 20px;
+}
+
+.card img{
+    width: 100%;
+}
+
+.cityContent{
+    font-size: 20px;
+    margin-top: 28px;
+    font-weight: 300;
+}
+
+.button{
+    background-color: #7a1755;
+    padding:14px 28px;
+    border:0;
+    font-size: 18px;
+    font-weight: 300;
+    color:white;
+}
+
+/* about section */
+
+#about{
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#about h2{
+    color: #7a1755;
+    font-size: 64px;
+    font-weight: 300;
+    margin: 44px auto 48px;
+}
+
+#about p{
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: 100;
+    text-align: justify;
+    margin-bottom: 90px;
+}
+
+/* footer section */
+
+footer{
+    background-color: #7a1755;
+}
+
+#footerContent{
+    width:90%;
+    margin: 0 auto;
+    color:white;
+    padding:28px;
+}
+
+#copyright{
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0;
+}
+
+#copyrightContent{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
