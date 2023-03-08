@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 body {
@@ -11,6 +11,7 @@ body {
 /* header section */
 header {
     background-color: #43123f;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.4rem;
     text-align: center;
     color: white;
@@ -32,7 +33,7 @@ header {
 
 .card {
     display: inline-block;
-    width: 33%;
+    width: 32.7%;
     text-align: left;
     padding: 5px 15px;
     margin-bottom: 75px;
@@ -40,13 +41,13 @@ header {
 
 .cityDescription{
     font-weight: 300;
-    font-size: 36px;
-    margin-top: 14px;
+    font-size: 37px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
 .cityName{
-    margin: 13px 0;
+    margin:8px 0;
     font-size: 20px;
 }
 
@@ -62,7 +63,7 @@ header {
 
 .button{
     background-color: #7a1755;
-    padding:14px 28px;
+    padding:12px 30px;
     border:0;
     font-size: 18px;
     font-weight: 300;
@@ -72,7 +73,7 @@ header {
 /* about section */
 
 #about{
-    width: 75%;
+    width: 74%;
     text-align: center;
     margin: 0 auto;
 }
@@ -81,13 +82,13 @@ header {
     color: #7a1755;
     font-size: 64px;
     font-weight: 300;
-    margin: 44px auto 48px;
+    margin: 30px auto 40px;
 }
 
 #about p{
-    font-size: 30px;
-    line-height: 1.5;
-    font-weight: 100;
+    font-size: 29px;
+    line-height: 1.6;
+    font-weight: 200;
     text-align: justify;
     margin-bottom: 90px;
 }
