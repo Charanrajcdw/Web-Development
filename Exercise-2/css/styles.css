@@ -19,13 +19,13 @@ header {
 }
 
 /* image section */
-#coverImg {
+#cover-image {
     width: 100%;
-    height: 100vh;
+    height: 92vh;
 }
   
 /* cards section */
-#cardSection{
+#card-section{
     width:90%;
     margin:84px auto 0;
     text-align: center;
@@ -39,14 +39,14 @@ header {
     margin-bottom: 75px;
 }
 
-.cityDescription{
+.city-description{
     font-weight: 300;
     font-size: 37px;
     margin-top: 10px;
     margin-bottom: 0;
 }
 
-.cityName{
+.city-name{
     margin:8px 0;
     font-size: 20px;
 }
@@ -55,7 +55,7 @@ header {
     width: 100%;
 }
 
-.cityContent{
+.city-content{
     font-size: 20px;
     margin-top: 28px;
     font-weight: 300;
@@ -68,6 +68,7 @@ header {
     font-size: 18px;
     font-weight: 300;
     color:white;
+    cursor: pointer;
 }
 
 /* about section */
@@ -99,7 +100,7 @@ footer{
     background-color: #7a1755;
 }
 
-#footerContent{
+#footer-content{
     width:90%;
     margin: 0 auto;
     color:white;
@@ -112,7 +113,7 @@ footer{
     margin: 0;
 }
 
-#copyrightContent{
+#copyright-content{
     font-size: 20px;
     font-weight: 300;
     margin: 0;
