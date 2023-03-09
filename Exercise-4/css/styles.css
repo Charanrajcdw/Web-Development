@@ -38,7 +38,7 @@ header{
     margin:10px 10px 20px;
 }
 
-h2{
+.card-title{
     width:100%;
     background-color: rgb(45, 94, 144);
     color:white;
@@ -46,7 +46,7 @@ h2{
     padding: 14px 24px;
 }
 
-p{
+.card-description{
     background-color: rgb(246, 246, 246);
     padding: 28px 24px;
     font-weight: 400;
