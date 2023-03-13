@@ -11,25 +11,25 @@ body {
 
 /* header section */
 
-header {
+.fashion-header {
   width: 84.5%;
   margin-left: 8.25%;
   margin-right: 7.25%;
   position: relative;
 }
 
-header > div {
+.fashion-header > div {
   display: inline-block;
   width: 50%;
 }
 
-#logo-container img {
+.logo-container img {
   height: 69px;
   width: 190px;
   margin: 78px 0 63px;
 }
 
-#dropdown {
+div.menu-container {
   padding-bottom: 13px;
   position: absolute;
   width: 69px;
@@ -37,19 +37,19 @@ header > div {
   right: -10px;
 }
 
-#dropdown:hover #menu {
+.menu-container:hover .menu-items {
   display: block;
 }
 
-#circle {
+.menu-button {
   height: 68px;
   width: 68px;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
   background-color: #d8d8d8;
 }
 
-#menu {
+.menu-items {
   position: absolute;
   right: 0px;
   margin-top: 13px;
@@ -61,12 +61,12 @@ header > div {
   z-index: 1;
 }
 
-#menu li {
+.menu-items li {
   font-weight: 700;
   padding: 9px;
 }
 
-#menu li:hover {
+.menu-items li:hover {
   cursor: pointer;
   background-color: #2a2b30;
   color: #eeeeee;
@@ -74,17 +74,17 @@ header > div {
 
 /* navbar */
 
-nav {
+.fashion-navbar {
   position: fixed;
   bottom: 0;
-  background-color: black;
+  background-color: #000000;
   color: white;
   width: 100%;
   text-align: center;
   z-index: 1;
 }
 
-.nav-item {
+.fashion-nav-item {
   display: inline-block;
   font-size: 24px;
   font-weight: 500;
@@ -94,27 +94,27 @@ nav {
 
 /* cards section */
 
-#cards {
+.dress-cards {
   width: 90%;
   margin-left: 6.5%;
   margin-right: 3.5%;
   margin-bottom: 62px;
 }
 
-.card {
+.dress-card {
   display: inline-block;
   width: 21%;
   margin: 0 26px 60px;
 }
 
-.image-container {
+.dress-image-container {
   background-color: #24252a;
   height: 400px;
   padding: 78px 0;
   position: relative;
 }
 
-.image-container img {
+.dress-image-container img {
   height: 250px;
   display: block;
   margin: 0 auto;
@@ -133,7 +133,7 @@ nav {
   height: 55px;
   width: 55px;
   background-color: #88b282;
-  color: black;
+  color: #000000;
   border-radius: 50%;
   position: absolute;
   bottom: -30px;
