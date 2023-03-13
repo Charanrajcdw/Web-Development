@@ -1,0 +1,173 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #2a2b30;
+}
+
+/* header section */
+
+header {
+  width: 84.5%;
+  margin-left: 8.25%;
+  margin-right: 7.25%;
+  position: relative;
+}
+
+header > div {
+  display: inline-block;
+  width: 50%;
+}
+
+#logo-container img {
+  height: 69px;
+  width: 190px;
+  margin: 78px 0 63px;
+}
+
+#dropdown {
+  padding-bottom: 13px;
+  position: absolute;
+  width: 69px;
+  top: 66px;
+  right: -10px;
+}
+
+#dropdown:hover #menu {
+  display: block;
+}
+
+#circle {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: #d8d8d8;
+}
+
+#menu {
+  position: absolute;
+  right: 0px;
+  margin-top: 13px;
+  background-color: #eeeeee;
+  width: 260px;
+  list-style: none;
+  padding: 15px;
+  display: none;
+  z-index: 1;
+}
+
+#menu li {
+  font-weight: 700;
+  padding: 9px;
+}
+
+#menu li:hover {
+  cursor: pointer;
+  background-color: #2a2b30;
+  color: #eeeeee;
+}
+
+/* navbar */
+
+nav {
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.nav-item {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 38px 30px;
+  cursor: pointer;
+}
+
+/* cards section */
+
+#cards {
+  width: 90%;
+  margin-left: 6.5%;
+  margin-right: 3.5%;
+  margin-bottom: 62px;
+}
+
+.card {
+  display: inline-block;
+  width: 21%;
+  margin: 0 26px 60px;
+}
+
+.image-container {
+  background-color: #24252a;
+  height: 400px;
+  padding: 78px 0;
+  position: relative;
+}
+
+.image-container img {
+  height: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
+.star-icon {
+  text-align: right;
+  color: #88b282;
+  font-size: 20px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+
+.size-icon {
+  height: 55px;
+  width: 55px;
+  background-color: #88b282;
+  color: black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -30px;
+  right: 19px;
+}
+
+.size-icon p {
+  margin-top: 14px;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.dress-name {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  padding-top: 18px;
+  padding-bottom: 5px;
+}
+
+.dress-rate {
+  color: #979797;
+  font-size: 22px;
+  font-weight: 300;
+  padding-bottom: 14px;
+}
+
+.cart-button {
+  color: #979797;
+  border: 1px solid #979797;
+  background-color: inherit;
+  font-size: 17px;
+  padding: 10px 22px;
+  font-weight: 500;
+  cursor: pointer;
+}
