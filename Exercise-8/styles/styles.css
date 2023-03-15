@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(../assets/images/background-image.png);
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+  color: #ffffff;
+  position: relative;
+}
+
+/* top text  */
+
+.title {
+  text-align: center;
+  position: relative;
+  top: -5rem;
+  font-size: 5rem;
+  font-weight: 600;
+  margin-top: 48px;
+}
+
+/* menu */
+
+.menu-wrapper {
+  position: relative;
+  display: inline-block;
+  top: 3.2rem;
+  z-index: 1;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  background-color: #000000;
+  padding: 1.8rem 1rem 1.8rem 2rem;
+  transform: scale(1.8, 1);
+}
+
+.menu-items-wrapper {
+  position: absolute;
+  transform: translate(-18rem);
+  transition: 1s ease-in;
+  width:17rem;
+  top: 5rem;
+  border-radius: 0 25px 25px 0;
+  background-color: #000000;
+  padding: 30px;
+  text-align: center;
+}
+
+.hat-icon {
+  margin: 20px auto 30px;
+}
+
+.menu-items {
+  list-style: none;
+}
+
+.menu-items li {
+  font-size: 18px;
+  font-weight: 350;
+  padding: 14px 35px;
+}
+
+.menu-items li:hover {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+.menu-wrapper:hover .menu-items-wrapper {
+  transform: translate(0px);
+}
+
+/* bottom text */
+
+.bottom-text {
+  text-align: center;
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-weight: 600;
+  line-height: 0.95;
+  position: fixed;
+  bottom: 3rem;
+}
+
+.bottom-text p:first-of-type {
+  font-size: 6.7rem;
+}
+
+.bottom-text p:last-of-type {
+  font-size: 8.9rem;
+}
+
+/* side text */
+
+.side-text {
+  position: absolute;
+  right: -7rem;
+  top: 12rem;
+  transform: rotate(-90deg);
+  font-size: 2.7rem;
+  font-weight: 600;
+}
+
+.side-text-year {
+  font-size: 7.5rem;
+  font-weight: 700;
+}
+
+/* bottom icons */
+
+.social-media-icons {
+  position: fixed;
+  color: #ffffff;
+  font-size: 2.2rem;
+  bottom: 20px;
+  right: 24px;
+}
+
+.social-media-icons i {
+  margin-left: 6px;
+}
