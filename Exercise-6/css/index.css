@@ -45,6 +45,7 @@ div.menu-container {
   height: 68px;
   width: 68px;
   border-radius: 50%;
+  cursor: pointer;
   border: 1px solid #ffffff;
   background-color: #d8d8d8;
 }
@@ -78,7 +79,7 @@ div.menu-container {
   position: fixed;
   bottom: 0;
   background-color: #000000;
-  color: white;
+  color: #ffffff;
   width: 100%;
   text-align: center;
   z-index: 1;
@@ -88,7 +89,7 @@ div.menu-container {
   display: inline-block;
   font-size: 24px;
   font-weight: 500;
-  padding: 38px 30px;
+  margin: 38px 30px;
   cursor: pointer;
 }
 
@@ -125,6 +126,7 @@ div.menu-container {
   color: #88b282;
   font-size: 20px;
   position: absolute;
+  cursor: pointer;
   right: 18px;
   top: 18px;
 }
@@ -148,7 +150,7 @@ div.menu-container {
 }
 
 .dress-name {
-  color: white;
+  color: #ffffff;
   font-size: 24px;
   font-weight: 300;
   padding-top: 18px;
