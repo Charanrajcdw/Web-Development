@@ -37,15 +37,24 @@ body {
 .menu-icon {
   font-size: 1.5rem;
   background-color: #000000;
-  padding: 1.8rem 1rem 1.8rem 2rem;
+}
+
+.menu-icon i {
   transform: scale(1.8, 1);
+  transition: 1s ease-in;
+  padding: 1.8rem;
+}
+
+.menu-icon:hover i {
+  cursor: pointer;
+  transform: scale(1.8, 1) rotate(180deg);
 }
 
 .menu-items-wrapper {
   position: absolute;
   transform: translate(-18rem);
   transition: 1s ease-in;
-  width:17rem;
+  width: 17rem;
   top: 5rem;
   border-radius: 0 25px 25px 0;
   background-color: #000000;
@@ -62,8 +71,9 @@ body {
 }
 
 .menu-items li {
-  font-size: 18px;
-  font-weight: 350;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
   padding: 14px 35px;
 }
 
@@ -128,3 +138,4 @@ body {
 .social-media-icons i {
   margin-left: 6px;
 }
+
