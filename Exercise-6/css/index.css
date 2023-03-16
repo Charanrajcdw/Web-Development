@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #2a2b30;
+}
+
+/* header section */
+
+.fashion-header {
+  width: 84.5%;
+  margin-left: 8.25%;
+  margin-right: 7.25%;
+  position: relative;
+}
+
+.fashion-header > div {
+  display: inline-block;
+  width: 50%;
+}
+
+.logo-container img {
+  height: 69px;
+  width: 190px;
+  margin: 78px 0 63px;
+}
+
+div.menu-container {
+  padding-bottom: 13px;
+  position: absolute;
+  width: 69px;
+  top: 66px;
+  right: -10px;
+}
+
+.menu-container:hover .menu-items {
+  display: block;
+}
+
+.menu-button {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  background-color: #d8d8d8;
+}
+
+.menu-items {
+  position: absolute;
+  right: 0px;
+  margin-top: 13px;
+  background-color: #eeeeee;
+  width: 260px;
+  list-style: none;
+  padding: 15px;
+  display: none;
+  z-index: 1;
+}
+
+.menu-items li {
+  font-weight: 700;
+  padding: 9px;
+}
+
+.menu-items li:hover {
+  cursor: pointer;
+  background-color: #2a2b30;
+  color: #eeeeee;
+}
+
+/* navbar */
+
+.fashion-navbar {
+  position: fixed;
+  bottom: 0;
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.fashion-nav-item {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 38px 30px;
+  cursor: pointer;
+}
+
+/* cards section */
+
+.dress-cards {
+  width: 90%;
+  margin-left: 6.5%;
+  margin-right: 3.5%;
+  margin-bottom: 62px;
+}
+
+.dress-card {
+  display: inline-block;
+  width: 21%;
+  margin: 0 26px 60px;
+}
+
+.dress-image-container {
+  background-color: #24252a;
+  height: 400px;
+  padding: 78px 0;
+  position: relative;
+}
+
+.dress-image-container img {
+  height: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
+.star-icon {
+  text-align: right;
+  color: #88b282;
+  font-size: 20px;
+  position: absolute;
+  cursor: pointer;
+  right: 18px;
+  top: 18px;
+}
+
+.size-icon {
+  height: 55px;
+  width: 55px;
+  background-color: #88b282;
+  color: #000000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -30px;
+  right: 19px;
+}
+
+.size-icon p {
+  margin-top: 14px;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.dress-name {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 300;
+  padding-top: 18px;
+  padding-bottom: 5px;
+}
+
+.dress-rate {
+  color: #979797;
+  font-size: 22px;
+  font-weight: 300;
+  padding-bottom: 14px;
+}
+
+.cart-button {
+  color: #979797;
+  border: 1px solid #979797;
+  background-color: inherit;
+  font-size: 17px;
+  padding: 10px 22px;
+  font-weight: 500;
+  cursor: pointer;
+}
