@@ -52,13 +52,14 @@ body {
   width: 79%;
   display: flex;
   flex-wrap: wrap;
-  row-gap: 36px;
+  row-gap: 30px;
+  column-gap: 30px;
   justify-content: space-between;
   margin: 9rem auto 9.8rem;
 }
 
 .images img {
-  width: calc(33.333333% - 22px);
+  width: calc((100% - 60px)/3);
 }
 
 /* logos section */
