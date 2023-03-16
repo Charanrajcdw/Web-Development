@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Exercise 12</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- external font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- external css -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- header section start -->
+    <header class="header-content">
+      <div class="header-content-left">MATH KIDS</div>
+      <div class="header-content-right">KIDS LEARNING APP</div>
+      <div class="clearfix"></div>
+    </header>
+    <!-- header section end -->
+
+    <!-- application start -->
+    <section class="application-content">
+      <div id="shapeLayer" class="application-layer">
+        <p>1. Choose a Shape</p>
+        <div class="shapes-container">
+          <div id="circle" class="shape">
+            <i class="fa-solid fa-check tick-icon"></i>
+          </div>
+          <div class="triangle-container">
+            <div id="triangle" class="shape">
+              <i class="fa-solid fa-check tick-icon"></i>
+            </div>
+          </div>
+          <div id="square" class="shape">
+            <i class="fa-solid fa-check tick-icon"></i>
+          </div>
+        </div>
+        <button class="application-layer-button" id="nextButton">NEXT</button>
+      </div>
+      <div id="inputLayer" class="application-layer">
+        <p id="inputText"></p>
+        <input
+          type="number"
+          name="inputNumber"
+          id="inputNumber"
+          class="inputField"
+          required
+        />
+        <button class="application-layer-button" id="calculateButton">
+          CALCULATE
+        </button>
+      </div>
+      <div id="outputLayer" class="application-layer">
+        <div id="shapeContainer"><div></div></div>
+        <p id="shapeName"></p>
+        <table id="outputTable" class="result-table">
+          <tr>
+            <td>SIDE</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>AREA</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>PERIMETER</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <button class="application-layer-button" id="startButton">
+          START AGAIN
+        </button>
+      </div>
+    </section>
+    <!-- application end -->
+
+    <!-- external js -->
+    <script type="" src="js/index.js"></script>
+  </body>
+</html>
