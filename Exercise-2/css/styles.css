@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* header section */
+header {
+    background-color: #43123f;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: white;
+    padding: 18px;
+}
+
+/* image section */
+#cover-image {
+    width: 100%;
+    height: 100vh;
+}
+  
+/* cards section */
+#card-section{
+    width:90%;
+    margin:84px auto 0;
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    width: 32.7%;
+    text-align: left;
+    padding: 5px 15px;
+    margin-bottom: 75px;
+}
+
+.city-description{
+    font-weight: 300;
+    font-size: 37px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.city-name{
+    margin:8px 0;
+    font-size: 20px;
+}
+
+.card img{
+    width: 100%;
+}
+
+.city-content{
+    font-size: 20px;
+    margin-top: 28px;
+    font-weight: 300;
+}
+
+.button{
+    background-color: #7a1755;
+    padding:12px 30px;
+    border:0;
+    font-size: 18px;
+    font-weight: 300;
+    color:white;
+    cursor: pointer;
+}
+
+/* about section */
+
+#about{
+    width: 74%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#about h2{
+    color: #7a1755;
+    font-size: 64px;
+    font-weight: 300;
+    margin: 30px auto 40px;
+}
+
+#about p{
+    font-size: 29px;
+    line-height: 1.6;
+    font-weight: 200;
+    text-align: justify;
+    margin-bottom: 90px;
+}
+
+/* footer section */
+
+footer{
+    background-color: #7a1755;
+}
+
+#footer-content{
+    width:90%;
+    margin: 0 auto;
+    color:white;
+    padding:28px;
+}
+
+#copyright{
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0;
+}
+
+#copyright-content{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
