@@ -33,7 +33,7 @@ const shapeFormulas = {
   },
 };
 
-var shapeDataObject = {
+const shapeDataObject = {
   selectedShape: "",
   shapeValue: 0,
   currentLayer: 0,
@@ -99,7 +99,7 @@ const calculateButton = document.querySelector("#calculateButton");
 const inputField = document.querySelector("#inputNumber");
 
 function setOutputLayerData() {
-  document.querySelector("#shapeContainer").children[0].setAttribute("id", shapeDataObject["selectedShape"]);
+  document.querySelector("#shapeContainer").children[0].className = shapeDataObject["selectedShape"];
   const shapeData = shapeFormulas[shapeDataObject["selectedShape"]];
   document.querySelector("#shapeName").innerText = shapeData[0];
   let dataCount = 1;

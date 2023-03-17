@@ -9,6 +9,10 @@ body {
   background-color: #000000;
 }
 
+.hide {
+  display: none;
+}
+
 /* header section */
 
 .header-content {
@@ -34,7 +38,7 @@ body {
 /* application layer title */
 
 .application-layer {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -68,10 +72,6 @@ body {
 
 /* shape layer */
 
-#shapeLayer{
-    display: none;
-}
-
 .shapes-container {
   width: 43%;
   margin: 100px auto 90px;
@@ -84,7 +84,7 @@ body {
   position: relative;
 }
 
-#circle {
+.circle {
   height: 153px;
   width: 153px;
   border-radius: 50%;
@@ -96,13 +96,13 @@ body {
   width: 160px;
 }
 
-#triangle {
+.triangle {
   border-left: 80px solid transparent;
   border-right: 80px solid transparent;
   border-bottom: 160px solid #ffabdc;
 }
 
-#square {
+.square {
   width: 152px;
   height: 152px;
   background-color: #e0e0e0;
@@ -124,15 +124,7 @@ body {
   top: 48%;
 }
 
-#nextButton {
-  display: none;
-}
-
 /* input layer */
-
-#inputLayer{
-    display: none;
-}
 
 .inputField {
   margin: 65px auto 55px;
@@ -144,11 +136,7 @@ body {
 
 /* output layer */
 
-#outputLayer{
-    display: none;
-}
-
-#shapeContainer + p {
+.shape-container + p {
   margin: 28px auto 0;
 }
 
@@ -179,6 +167,6 @@ body {
   width: 140px;
 }
 
-#outputLayer button:last-child {
+.application-layer:last-child button:last-child {
   margin-top: 60px;
 }
