@@ -1,4 +1,4 @@
-var calculator={
+const calculator={
     // validation
     isValid:function(number1,number2) {
         if(typeof(number1)=="number" && typeof(number2)=="number")
@@ -36,8 +36,8 @@ var calculator={
     }
 }
 
-number1=10
-number2=9
+let number1=10
+let number2=9
 
 console.log(calculator.add(number1,number2));
 console.log(calculator.subtract(number1,number2));
