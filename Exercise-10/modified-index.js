@@ -45,10 +45,7 @@ function calculateFarenheit(celsius) {
 calculateFarenheit(0);
 
 function calculateAverage(numbers) {
-  let sum = 0;
-  for (number of numbers) {
-    sum += number;
-  }
+  let sum = numbers.reduce((sum, number) => sum + number);
   console.log(sum / numbers.length);
 }
 calculateAverage([1.1, 2.2, 3.3, 4.4, 5.5]);
