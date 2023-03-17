@@ -14,8 +14,8 @@ const shapesData = {
     inputText: "2. Enter Side (Base & Height)",
     name: "Equilateral Triangle",
     value: "s",
-    areaFormula: "0.433 <sup>*</sup> s <sup>*</sup> s",
-    perimeterFormula: "3 <sup>*</sup> s",
+    areaFormula: "0.433 * s * s",
+    perimeterFormula: "3 * s",
     getArea: (value) => 0.433 * value * value,
     getPerimeter: (value) => 3 * value,
   },
@@ -23,8 +23,8 @@ const shapesData = {
     inputText: "2. Enter Side",
     name: "Square",
     value: "s",
-    areaFormula: "s <sup>*</sup> s",
-    perimeterFormula: "4 <sup>*</sup> s",
+    areaFormula: "s * s",
+    perimeterFormula: "4 * s",
     getArea: (value) => value * value,
     getPerimeter: (value) => 4 * value,
   },
@@ -57,26 +57,25 @@ if (shapeDataObject.currentLayer == 0) {
 
 const shapes = document.querySelectorAll(".shape");
 const ticks = document.querySelectorAll(".tick-icon");
-ticks.forEach((tick) => {
-  tick.classList.add("hide");
-});
 const nextButton = document.querySelector("#nextButton");
 
 Array.from(shapes).forEach((shape) => {
   // to display and hide ticks
   shape.addEventListener("click", (event) => {
-    shapeID = event.target.getAttribute("id");
+    let shapeID = event.target.getAttribute("id");
     shapeDataObject.selectedShape = shapeID;
     ticks.forEach((tick) => {
       tick.classList.add("hide");
     });
-    document.getElementById(shapeID).children[0].classList.remove("hide");
+    event.target.children[0].classList.remove("hide");
     nextButton.classList.remove("hide");
   });
 });
 
+/**
+ * to dynamically add data to input page
+ */
 function setInputLayerData() {
-  // to dynamically add data to input page
   document.querySelector("#inputText").innerText = shapesData[shapeDataObject["selectedShape"]]["inputText"];
   inputLayer.classList.remove("hide");
 }
@@ -97,8 +96,10 @@ nextButton.addEventListener("click", () => {
 const calculateButton = document.querySelector("#calculateButton");
 const inputField = document.querySelector("#inputNumber");
 
+/**
+ * to dynamically add data to output page
+ */
 function setOutputLayerData() {
-  // to dynamically add data to output page
   document.querySelector("#shapeContainer").children[0].className = shapeDataObject["selectedShape"];
   const shapeData = shapesData[shapeDataObject["selectedShape"]];
   document.querySelector("#shapeName").innerText = shapeData["name"];
