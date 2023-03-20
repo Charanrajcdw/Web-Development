@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regex exercise</title>
+
+    <!-- external fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet" />
+
+    <!-- external css -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- header section start -->
+    <header class="logo-container">
+      <img src="assets/Sirius_CDW_Cobranded_PMS2747.svg" alt="sirius-logo" />
+    </header>
+    <!-- header section end -->
+
+    <!-- main section start -->
+    <main>
+      <form action="post" id="paymentForm" class="payment-form">
+        <p class="form-title">BILLING DETAILS</p>
+        <div class="person-name double-input">
+          <div class="form-group">
+            <p>First Name</p>
+            <input type="text" name="firstName" id="firstName" />
+            <p class="warning-message hide"></p>
+          </div>
+          <div class="form-group">
+            <p>Last Name</p>
+            <input type="text" name="lastName" id="lastName" />
+            <p class="warning-message hide"></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <p>Email Address</p>
+          <input type="email" name="email" id="email" />
+          <p class="warning-message hide"></p>
+        </div>
+        <div class="form-group">
+          <p>Contact Number</p>
+          <input type="number" name="contactNumber" id="contactNumber" />
+          <p class="warning-message hide"></p>
+        </div>
+        <div class="form-group">
+          <p>PIN Code</p>
+          <input type="number" name="pin" id="pin" />
+          <p class="warning-message hide"></p>
+        </div>
+        <p class="form-title">PAYMENT DETAILS</p>
+        <div class="form-group">
+          <p>Card Number</p>
+          <input type="number" name="cardNumber" id="cardNumber" />
+          <p class="warning-message hide"></p>
+        </div>
+        <div class="card-detail double-input">
+          <div class="form-group">
+            <p>Card Expiry (Year)</p>
+            <input type="number" name="expiryYear" id="expiryYear" />
+            <p class="warning-message hide"></p>
+          </div>
+          <div class="form-group">
+            <p>CVV</p>
+            <input type="number" name="cvv" id="cvv" />
+            <p class="warning-message hide"></p>
+          </div>
+        </div>
+        <button type="submit" id="submitButton">COMPLETE PAYMENT</button>
+      </form>
+    </main>
+    <!-- main section end -->
+
+    <!-- external js -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
