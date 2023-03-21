@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blender Movies</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- external font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- external css -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- header section start -->
+    <header class="header-content">
+      <div class="container flex">
+        <div class="logo width50">
+          <span>Blender Movies</span>
+        </div>
+        <div class="profile flex justify-right width50">
+          <span class="profile-name">Steffy Jerry</span>
+          <img src="images/user-image.png" alt="Steffy" class="profile-image" />
+        </div>
+      </div>
+    </header>
+    <!-- header section end -->
+
+    <!-- main content start -->
+    <main>
+      <div class="container flex">
+        <section class="movies-section">
+          <div id="videoContainer"></div>
+          <div class="video-container">
+            <div id="videoTitle"></div>
+            <div id="videoDescription"></div>
+          </div>
+          <div class="section-seperator"></div>
+          <div class="comment-container">
+            <span>Comments</span>
+            <div id="commentContainer"></div>
+          </div>
+        </section>
+        <div class="section-seperator"></div>
+        <section class="projects-section">
+          <span>Upcoming Projects</span>
+          <div id="postersContainer"></div>
+        </section>
+      </div>
+    </main>
+    <!-- main content end -->
+
+    <!-- footer section start -->
+    <footer class="footer-content">
+      <div class="message-icon">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+      <div class="container flex">
+        <div class="copyrights width50 flex"><span class="copy-symbol">&copy;</span> <span>Copyrights 2022</span></div>
+        <div class="footerLogo flex justify-right width50">
+          <span>Blender Movies</span>
+        </div>
+      </div>
+    </footer>
+    <!-- footer section end -->
+
+    <!-- external js -->
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
