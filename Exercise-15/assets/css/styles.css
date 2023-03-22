@@ -33,27 +33,27 @@ img {
 /* header section */
 
 .header-content {
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.31rem 0.62rem rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   background-color: #ffffff;
   z-index: 1;
 }
 
-.logo h1{
-  font-size: 20px;
+.logo h1 {
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 18px 0;
+  margin: 1.125rem 0;
 }
 
 .profile-name {
-  font-size: 11px;
-  margin: 0 10px;
+  font-size: 0.68rem;
+  margin: 0 0.62rem;
 }
 
 .profile-image {
-  height: 25px;
-  width: 25px;
+  height: 1.56rem;
+  width: 1.56rem;
   border-radius: 50%;
 }
 
@@ -62,11 +62,11 @@ img {
 main {
   background-color: #f5f5f5;
   width: 100%;
-  padding: 22px 0;
+  padding: 1.38rem 0;
 }
 
 main div.container {
-  gap: 27px;
+  gap: 1.69rem;
   align-items: start;
 }
 
@@ -78,47 +78,47 @@ main div.container {
 
 .video-container,
 .comment-container {
-  margin: 22px 0;
+  margin: 1.38rem 0;
 }
 
 .video-container h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
 .video-container p {
-  font-size: 13px;
+  font-size: 0.81rem;
   font-weight: 300;
-  margin-top: 14px;
-  padding-right: 10px;
+  margin-top: 0.88rem;
+  padding-right: 0.63rem;
   line-height: 1.6;
 }
 
 .comment-container > h3 {
-  font-size: 18px;
+  font-size: 1.13rem;
   font-weight: 600;
 }
 
 .comment {
-  margin: 18px 0;
+  margin: 1.13rem 0;
 }
 
 .comment-image-container img {
-  height: 45px;
-  width: 45px;
+  height: 2.81rem;
+  width: 2.81rem;
   border-radius: 50%;
-  margin-right: 12px;
+  margin-right: 0.75rem;
 }
 
 .comment-name {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 0.38rem;
 }
 
 .comment-description {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.5;
 }
@@ -135,14 +135,14 @@ main div.container {
 
 .projects-section > h3 {
   display: inline-block;
-  margin: 2px 0 8px;
+  margin: 0.125rem 0 0.5rem;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.13rem;
   letter-spacing: 0.5px;
 }
 
 .projects-section img {
-  margin-bottom: 10px;
+  margin-bottom: 0.63rem;
 }
 
 /* footer section */
@@ -150,22 +150,22 @@ main div.container {
 .footer-content {
   background-color: #000000;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 0.81rem;
   font-weight: 600;
-  padding: 22px 0;
+  padding: 1.38rem 0;
 }
 
 .copy-symbol {
-  font-size: 18px;
-  margin: 4px;
+  font-size: 1.13rem;
+  margin: 0.25rem;
 }
 
 .message-icon {
   position: fixed;
-  bottom: 35px;
-  right: 35px;
-  height: 62px;
-  width: 62px;
+  bottom: 2.19rem;
+  right: 2.19rem;
+  height: 3.88rem;
+  width: 3.88rem;
   border-radius: 50%;
   background-color: #c432ae;
 }
@@ -176,9 +176,9 @@ main div.container {
 
 .message-icon i {
   position: relative;
-  top: 18px;
-  left: 15px;
-  font-size: 24px;
+  top: 1.13rem;
+  left: 0.94rem;
+  font-size: 1.5rem;
 }
 
 /* mobile styles */
@@ -186,7 +186,7 @@ main div.container {
 @media only screen and (max-width: 576px) {
   .container {
     width: 95%;
-    padding: 8px;
+    padding: 0.5rem;
   }
 
   /* header section */
@@ -196,7 +196,7 @@ main div.container {
 
   .logo {
     width: 70%;
-    font-size: 26px;
+    font-size: 1.63rem;
     font-weight: 700;
   }
 
@@ -205,8 +205,8 @@ main div.container {
   }
 
   .profile-image {
-    height: 40px;
-    width: 40px;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
   /* main section */
@@ -220,12 +220,12 @@ main div.container {
   }
 
   .video-container {
-    margin-top: 12px;
+    margin-top: 0.75rem;
   }
 
   .video-container p {
-    margin-top: 12px;
-    font-size: 16px;
+    margin-top: 0.75rem;
+    font-size: 1rem;
     letter-spacing: 0.2px;
   }
 
@@ -234,22 +234,22 @@ main div.container {
   }
 
   .comment-image-container img {
-    height: 65px;
-    width: 65px;
-    margin-right: 20px;
+    height: 4.06rem;
+    width: 4.06rem;
+    margin-right: 1.25rem;
   }
 
   .comment-name {
-    font-size: 17px;
+    font-size: 1.06rem;
     font-weight: 600;
   }
 
   .comment-description {
-    font-size: 16.5px;
+    font-size: 1.03rem;
   }
 
   .projects-section > h3 {
-    margin: 20px 0 15px;
+    margin: 1.25rem 0 0.94rem;
   }
 
   /* footer section */
@@ -260,27 +260,27 @@ main div.container {
 
   .footerLogo {
     width: 100%;
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
-  .copyrights{
+  .copyrights {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    font-size: 18px;
+    font-size: 1.13rem;
   }
 
-  .message-icon{
-    height:100px;
-    width:100px;
-    bottom:48px;
-    right:22px;
+  .message-icon {
+    height: 6.25rem;
+    width: 6.25rem;
+    bottom: 3rem;
+    right: 1.38rem;
   }
 
-  .message-icon i{
-    top: 24px;
-    left: 22px;
-    font-size: 44px;
+  .message-icon i {
+    top: 1.5rem;
+    left: 1.38rem;
+    font-size: 2.75rem;
   }
 }
