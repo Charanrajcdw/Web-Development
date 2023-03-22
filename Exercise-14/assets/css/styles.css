@@ -92,11 +92,11 @@ h2.form-title:nth-of-type(2) {
   color: #a80001;
 }
 
-.red-box {
+.warning-highlight {
   border: 1px solid #a80001 !important;
 }
 
-.red-box:focus {
+.warning-highlight:focus {
   border: 1px solid #a80001;
   outline: none;
 }

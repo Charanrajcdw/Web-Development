@@ -12,12 +12,12 @@ const inputMessages = {
   email: {
     required: "Email is required",
     validation: "Email is not valid",
-    regex: /^\S+@\S+\.\S+$/,
+    regex: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
   },
   contactNumber: {
     required: "Contact Number is required",
     validation: "Contact Number is not valid",
-    regex: /^[0-9]{10}$/,
+    regex: /^[6-9][0-9]{9}$/,
   },
   pin: {
     required: "PIN Code is required",
@@ -44,28 +44,40 @@ const inputMessages = {
 const form = document.getElementById("paymentForm");
 const inputs = document.querySelectorAll("input");
 
-document.getElementById("submitButton").addEventListener("click", (event) => {
+/**
+ * This object will validate whether given input is valid or not
+ * 
+ * @param {Object} input -  an input object to validate it
+ * @returns boolean value of whether input is valid or not
+ */
+function validateInput(input) {
+  const elementId = input.id;
+  const nextSibling = input.nextElementSibling;
+  if (input.value == "") {
+    nextSibling.classList.remove("hide");
+    nextSibling.innerText = inputMessages[elementId].required;
+    input.classList.add("warning-highlight");
+    return false;
+  } else if (!inputMessages[elementId].regex.test(input.value)) {
+    nextSibling.classList.remove("hide");
+    nextSibling.innerText = inputMessages[elementId].validation;
+    input.classList.add("warning-highlight");
+    return false;
+  } else {
+    nextSibling.classList.add("hide");
+    input.classList.remove("warning-highlight");
+    return true;
+  }
+}
+
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   let isFormValid = true;
   //input field validation
   for (let input of inputs) {
-    const elementId = input.id;
-    const nextSibling = input.nextElementSibling;
-    if (input.value == "") {
-      nextSibling.classList.remove("hide");
-      nextSibling.innerText = inputMessages[elementId].required;
-      input.classList.add("red-box");
-      isFormValid = false;
-    } else if (!inputMessages[elementId].regex.test(input.value)) {
-      nextSibling.classList.remove("hide");
-      nextSibling.innerText = inputMessages[elementId].validation;
-      input.classList.add("red-box");
-      isFormValid = false;
-    } else {
-      nextSibling.classList.add("hide");
-      input.classList.remove("red-box");
-    }
+    const validationValue = validateInput(input);
+    isFormValid = isFormValid ? validationValue : false;
   }
 
   // submit form if all validation passess
@@ -73,3 +85,5 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
     form.reset();
   }
 });
+
+Array.from(inputs).forEach((input) => input.addEventListener("change", () => validateInput(input)));
