@@ -15,7 +15,7 @@ body {
   color: #ffffff;
 }
 
-.header-content span {
+.header-content h1 {
   display: inline-block;
   font-size: 24px;
   letter-spacing: 1px;
@@ -60,7 +60,7 @@ body {
   font-size: 18px;
 }
 
-.friend-details > p:last-child{
+.friend-details > a:last-child{
   font-weight: 300;
   font-size: 15px;
 }

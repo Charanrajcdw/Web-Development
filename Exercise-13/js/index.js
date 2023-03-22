@@ -2,8 +2,11 @@ import data from "../assets/friends.json" assert { type: "json" };
 
 const cardsContainer = document.getElementById("cardsContainer");
 
+/**
+ * Creates the friends card containers and adds it to the main page
+ */
 function addFriendsData() {
-  const result = new DocumentFragment();
+  const friendsCards = new DocumentFragment();
   for (let friendDetail of data) {
     // image container
     const friendImageContainer = document.createElement("div");
@@ -19,7 +22,7 @@ function addFriendsData() {
     const friendName = document.createElement("p");
     friendName.classList.add("friend-name");
     friendName.innerText = friendDetail.first_name + " " + friendDetail.last_name;
-    const friendEmail = document.createElement("p");
+    const friendEmail = document.createElement("a");
     friendEmail.classList.add("friend-email");
     friendEmail.innerText = friendDetail.email;
     friendDetailsContainer.appendChild(friendName);
@@ -31,9 +34,9 @@ function addFriendsData() {
     friendCardContainer.appendChild(friendImageContainer);
     friendCardContainer.appendChild(friendDetailsContainer);
 
-    result.appendChild(friendCardContainer);
+    friendsCards.appendChild(friendCardContainer);
   }
-  cardsContainer.appendChild(result);
+  cardsContainer.appendChild(friendsCards);
 }
 
 addFriendsData();
