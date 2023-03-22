@@ -47,6 +47,7 @@ const inputs = document.querySelectorAll("input");
 document.getElementById("submitButton").addEventListener("click", (event) => {
   event.preventDefault();
 
+  let isFormValid = true;
   //input field validation
   for (let input of inputs) {
     const elementId = input.id;
@@ -55,10 +56,12 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
       nextSibling.classList.remove("hide");
       nextSibling.innerText = inputMessages[elementId].required;
       input.classList.add("red-box");
+      isFormValid = false;
     } else if (!inputMessages[elementId].regex.test(input.value)) {
       nextSibling.classList.remove("hide");
       nextSibling.innerText = inputMessages[elementId].validation;
       input.classList.add("red-box");
+      isFormValid = false;
     } else {
       nextSibling.classList.add("hide");
       input.classList.remove("red-box");
@@ -66,7 +69,7 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
   }
 
   // submit form if all validation passess
-  if (count == 8) {
+  if (isFormValid) {
     form.reset();
   }
 });
