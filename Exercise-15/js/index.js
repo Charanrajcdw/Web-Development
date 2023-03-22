@@ -5,6 +5,9 @@ import posterData from "../assets/posters.json" assert { type: "json" };
 const videoContainer = document.getElementById("videoContainer");
 const videoDetailsContainer = document.getElementById("videoDetailsContainer");
 
+/**
+ * This function dynamically adds the video, videoTitle and videoDescription
+ */
 function addVideoDetails() {
   //adding video
   const video = document.createElement("video");
@@ -27,6 +30,9 @@ function addVideoDetails() {
 //-----comments section-----
 const commentMainContainer = document.getElementById("commentContainer");
 
+/**
+ * This function dynamically creates the comment cards and adds it to commentContainer
+ */
 function addComments() {
   const commentFragment = new DocumentFragment();
   for (let comment of videoData.comments) {
@@ -69,6 +75,9 @@ function addComments() {
 //-----posters section-----
 const posterMainContainer = document.getElementById("postersContainer");
 
+/**
+ * This function dynamically creates the posters and adds it to postersContainer
+ */
 function addPosters() {
   const posterFragment = new DocumentFragment();
   for (let poster of posterData) {
