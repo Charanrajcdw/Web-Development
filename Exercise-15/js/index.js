@@ -3,8 +3,7 @@ import posterData from "../assets/posters.json" assert { type: "json" };
 
 //-----videos section-----
 const videoContainer = document.getElementById("videoContainer");
-const videoTitle = document.getElementById("videoTitle");
-const videoDescription = document.getElementById("videoDescription");
+const videoDetailsContainer = document.getElementById("videoDetailsContainer");
 
 function addVideoDetails() {
   //adding video
@@ -17,18 +16,19 @@ function addVideoDetails() {
   //adding video title
   const title = document.createElement("span");
   title.innerText = videoData.title;
-  videoTitle.appendChild(title);
+  videoDetailsContainer.appendChild(title);
 
   //adding video description
   const description = document.createElement("p");
   description.innerText = videoData.description;
-  videoDescription.appendChild(description);
+  videoDetailsContainer.appendChild(description);
 }
 
 //-----comments section-----
 const commentMainContainer = document.getElementById("commentContainer");
 
 function addComments() {
+  const commentFragment = new DocumentFragment();
   for (let comment of videoData.comments) {
     //image container
     const image = document.createElement("img");
@@ -61,21 +61,24 @@ function addComments() {
     commentContainer.appendChild(detailsContainer);
 
     //adding comment
-    commentMainContainer.appendChild(commentContainer);
+    commentFragment.appendChild(commentContainer);
   }
+  commentMainContainer.appendChild(commentFragment);
 }
 
 //-----posters section-----
 const posterMainContainer = document.getElementById("postersContainer");
 
 function addPosters() {
+  const posterFragment = new DocumentFragment();
   for (let poster of posterData) {
     // adding image to posters
     const image = document.createElement("img");
     image.src = poster.imageUrl;
     image.alt = poster.title;
-    posterMainContainer.appendChild(image);
+    posterFragment.appendChild(image);
   }
+  posterMainContainer.appendChild(posterFragment);
 }
 
 // adding dynamic data
