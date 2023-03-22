@@ -17,7 +17,7 @@ function addVideoDetails() {
   videoContainer.appendChild(video);
 
   //adding video title
-  const title = document.createElement("span");
+  const title = document.createElement("h2");
   title.innerText = videoData.title;
   videoDetailsContainer.appendChild(title);
 

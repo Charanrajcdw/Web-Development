@@ -40,7 +40,7 @@ img {
   z-index: 1;
 }
 
-.logo {
+.logo h1{
   font-size: 20px;
   font-weight: 600;
   margin: 18px 0;
@@ -81,7 +81,7 @@ main div.container {
   margin: 22px 0;
 }
 
-.video-container span {
+.video-container h2 {
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -95,7 +95,7 @@ main div.container {
   line-height: 1.6;
 }
 
-.comment-container > span {
+.comment-container > h3 {
   font-size: 18px;
   font-weight: 600;
 }
@@ -133,7 +133,7 @@ main div.container {
   width: 23.5%;
 }
 
-.projects-section > span {
+.projects-section > h3 {
   display: inline-block;
   margin: 2px 0 8px;
   font-weight: 600;
@@ -248,7 +248,7 @@ main div.container {
     font-size: 16.5px;
   }
 
-  .projects-section > span {
+  .projects-section > h3 {
     margin: 20px 0 15px;
   }
 
