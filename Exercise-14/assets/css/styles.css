@@ -29,13 +29,13 @@ body {
 }
 
 .payment-form,
-.double-input > div {
+.input-group > div {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.double-input {
+.input-group {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -44,6 +44,7 @@ body {
 
 /* main section input containers */
 
+.payment-form label,
 .payment-form p {
   font-size: 10.5px;
   font-weight: 500;
@@ -58,14 +59,14 @@ body {
   width: 100%;
 }
 
-p.form-title {
+h2.form-title {
   color: #001c72;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
 
-p.form-title:nth-of-type(2) {
+h2.form-title:nth-of-type(2) {
   margin: 14px 0 0;
 }
 
@@ -87,7 +88,7 @@ p.form-title:nth-of-type(2) {
 
 /* warnings */
 
-.warning-message{
+.warning-message {
   color: #a80001;
 }
 

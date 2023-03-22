@@ -46,12 +46,11 @@ const inputs = document.querySelectorAll("input");
 
 document.getElementById("submitButton").addEventListener("click", (event) => {
   event.preventDefault();
-  let count = 0;
 
   //input field validation
   for (let input of inputs) {
-    var elementId = input.id;
-    var nextSibling = input.nextElementSibling;
+    const elementId = input.id;
+    const nextSibling = input.nextElementSibling;
     if (input.value == "") {
       nextSibling.classList.remove("hide");
       nextSibling.innerText = inputMessages[elementId].required;
@@ -63,7 +62,6 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
     } else {
       nextSibling.classList.add("hide");
       input.classList.remove("red-box");
-      count++;
     }
   }
 
