@@ -2,15 +2,28 @@ let videoData;
 let posterData;
 
 /**
- * This function fetches the videos and posters data
+ * This function fetches the videos data
  */
-async function getVideoAndPosterData() {
-  const VIDEO_RESPONSE = await fetch("https://mocki.io/v1/4da47fc5-bbf3-4e41-b35f-c88a584bc4b0");
-  videoData = await VIDEO_RESPONSE.json();
+const getVideoData = () => {
+  return $.ajax({
+    url: "https://mocki.io/v1/4da47fc5-bbf3-4e41-b35f-c88a584bc4b0",
+    success: (data) => {
+      videoData = data;
+    },
+  });
+};
 
-  const POSTER_RESPONSE = await fetch("https://mocki.io/v1/8c9b378b-d248-4203-93b0-b8e7659ac346");
-  posterData = await POSTER_RESPONSE.json();
-}
+/**
+ * This function fetches the posters data
+ */
+const getPosterData = () => {
+  return $.ajax({
+    url: "https://mocki.io/v1/8c9b378b-d248-4203-93b0-b8e7659ac346",
+    success: (data) => {
+      posterData = data;
+    },
+  });
+};
 
 /**
  * This function dynamically adds the video, videoTitle and videoDescription
@@ -92,7 +105,7 @@ const addPosters = () => {
 };
 
 // adding dynamic data
-getVideoAndPosterData().then(() => {
+$.when(getVideoData(), getPosterData()).done(() => {
   addVideoDetails();
   addComments();
   addPosters();
