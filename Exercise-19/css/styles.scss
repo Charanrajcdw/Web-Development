@@ -6,6 +6,12 @@ $BLACK:#000000;
 $PRIMARY_FONT: "Roboto", sans-serif;
 $SECONDARY_FONT: "Roboto Condensed", sans-serif;
 
+@mixin flex-property{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -45,12 +51,9 @@ body {
 	color: $BLUE;
 }
 .images {
+	@include flex-property();
 	width: 79%;
-	display: flex;
-	flex-wrap: wrap;
-	row-gap: 30px;
-	column-gap: 30px;
-	justify-content: space-between;
+	gap:30px;
 	margin: 9rem auto 9.8rem;
 	img {
 		width: calc((100% - 60px)/3);
@@ -68,12 +71,10 @@ body {
 	color: $GREEN;
 }
 .logo-container {
+	@include flex-property();
 	margin: 80px auto;
 	width: 77%;
-	display: flex;
-	flex-wrap: wrap;
 	column-gap: 50px;
-	justify-content: space-between;
 	align-items: center;
 	img {
 		max-width: 13%;
