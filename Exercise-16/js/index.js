@@ -23,7 +23,7 @@ function Bank(cardNumber) {
    */
   function login(cardNumber) {
     currentUser = USER_ACCOUNTS.find((account) => account.cardNumber === cardNumber);
-    if (currentUser === undefined) {
+    if (!currentUser) {
       OUTPUT_CONTAINER.innerText = "INVALID CARD NO!!!";
     } else {
       const PIN = parseInt(prompt("Enter your pin:"));
