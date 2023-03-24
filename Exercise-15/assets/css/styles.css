@@ -184,6 +184,10 @@ main div.container {
 /* mobile styles */
 
 @media only screen and (max-width: 576px) {
+  html {
+    font-size: 20px;
+  }
+
   .container {
     width: 95%;
     padding: 0.5rem;
@@ -196,8 +200,6 @@ main div.container {
 
   .logo {
     width: 70%;
-    font-size: 1.63rem;
-    font-weight: 700;
   }
 
   .profile {
@@ -219,33 +221,14 @@ main div.container {
     width: 100%;
   }
 
-  .video-container {
-    margin-top: 0.75rem;
-  }
-
-  .video-container p {
-    margin-top: 0.75rem;
-    font-size: 1rem;
-    letter-spacing: 0.2px;
-  }
-
   .comment {
     align-items: start;
   }
 
-  .comment-image-container img {
-    height: 4.06rem;
-    width: 4.06rem;
-    margin-right: 1.25rem;
-  }
-
-  .comment-name {
-    font-size: 1.06rem;
-    font-weight: 600;
-  }
-
-  .comment-description {
-    font-size: 1.03rem;
+  .video-container h2,
+  .comment-container > h3 {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
   }
 
   .projects-section > h3 {
@@ -260,7 +243,7 @@ main div.container {
 
   .footerLogo {
     width: 100%;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .copyrights {
@@ -268,19 +251,19 @@ main div.container {
     align-items: center;
     justify-content: center;
     width: 100%;
-    font-size: 1.13rem;
+    font-size: 1rem;
   }
 
   .message-icon {
-    height: 6.25rem;
-    width: 6.25rem;
-    bottom: 3rem;
+    height: 5rem;
+    width: 5rem;
+    bottom: 3.2rem;
     right: 1.38rem;
   }
 
   .message-icon i {
-    top: 1.5rem;
-    left: 1.38rem;
+    top: 1rem;
+    left: 0.8rem;
     font-size: 2.75rem;
   }
 }

@@ -14,6 +14,7 @@ function addVideoDetails() {
   video.src = videoData.videoUrl;
   video.setAttribute("width", "100%");
   video.controls = true;
+  video.poster = "https://www.slashcam.de/images/news/sprite_fright1-16857_PIC1.jpg";
   videoContainer.appendChild(video);
 
   //adding video title
