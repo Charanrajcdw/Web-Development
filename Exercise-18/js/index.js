@@ -26,26 +26,37 @@ const getPosterData = () => {
 };
 
 /**
+ * This functions helps to create a element with given attributes and innertext
+ *
+ * @param {String} tag - the element to create
+ * @param {Object} attributes - the attributes of the element
+ * @param {String|Object} content - the innertext or innerhtml of the element
+ * @returns the created element
+ */
+function createCustomElement(tag, attributes, content) {
+  const element = $(tag);
+  for (let attributeName in attributes) {
+    element.attr(attributeName, attributes[attributeName]);
+  }
+  if (content) {
+    typeof content === String ? element.text(content) : element.append(content);
+  }
+  return element;
+}
+
+/**
  * This function dynamically adds the video, videoTitle and videoDescription
  */
 const addVideoDetails = () => {
-  //adding video
-  const VIDEO = $("<video>");
-  VIDEO.attr("src", videoData.videoUrl);
-  VIDEO.attr("controls", true);
-  VIDEO.attr("poster", "https://www.slashcam.de/images/news/sprite_fright1-16857_PIC1.jpg");
-  VIDEO.css("width", "100%");
-  $("#videoContainer").append(VIDEO);
-
-  //adding video title
-  const TITLE = $("<h2>");
-  TITLE.text(videoData.title);
-  $("#videoDetailsContainer").append(TITLE);
-
-  //adding video description
-  const DESCRIPTION = $("<p>");
-  DESCRIPTION.text(videoData.description);
-  $("#videoDetailsContainer").append(DESCRIPTION);
+  $("#videoContainer").append(
+    createCustomElement("<video>", {
+      src: videoData.videoUrl,
+      controls: true,
+      poster: "https://www.slashcam.de/images/news/sprite_fright1-16857_PIC1.jpg",
+    })
+  );
+  $("#videoDetailsContainer").append(createCustomElement("<h2>", {}, videoData.title));
+  $("#videoDetailsContainer").append(createCustomElement("<p>", {}, videoData.description));
 };
 
 /**
@@ -55,36 +66,18 @@ const addComments = () => {
   const COMMENT_FRAGMENT = $(document.createDocumentFragment());
   $(videoData.comments).each((index, comment) => {
     // image container
-    const IMAGE = $("<img>");
-    IMAGE.attr("src", comment.image);
-    IMAGE.attr("alt", comment.name);
-    const IMAGE_CONTAINER = $("<div>");
-    IMAGE_CONTAINER.addClass("comment-image-container");
-    IMAGE_CONTAINER.append(IMAGE);
+    const IMAGE = createCustomElement("<img>", { src: comment.image, alt: comment.name });
+    const IMAGE_CONTAINER = createCustomElement("<div>", { class: "comment-image-container" }, IMAGE);
 
     // details container
-    const NAME = $("<span>");
-    NAME.text(comment.name);
-    const NAME_CONTAINER = $("<div>");
-    NAME_CONTAINER.addClass("comment-name");
-    const DESCRIPTION = $("<p>");
-    DESCRIPTION.text(comment.comment);
-    const DESCRIPTION_CONTAINER = $("<div>");
-    DESCRIPTION_CONTAINER.addClass("comment-description");
-    const DETAILS_CONTAINER = $("<div>");
-    DETAILS_CONTAINER.addClass("comment-details-container");
-    NAME_CONTAINER.append(NAME);
-    DESCRIPTION_CONTAINER.append(DESCRIPTION);
-    DETAILS_CONTAINER.append(NAME_CONTAINER);
-    DETAILS_CONTAINER.append(DESCRIPTION_CONTAINER);
+    const NAME_CONTAINER = createCustomElement("<div>", { class: "comment-name" }, createCustomElement("<span>", {}, comment.name));
+    const DESCRIPTION_CONTAINER = createCustomElement("<div>", { class: "comment-description" }, createCustomElement("<p>", {}, comment.comment));
+    const DETAILS_CONTAINER = createCustomElement("<div>", { class: "comment-details-container" });
+    DETAILS_CONTAINER.append(NAME_CONTAINER, DESCRIPTION_CONTAINER);
 
     //main container
-    const COMMENT_CONTAINER = $("<div>");
-    COMMENT_CONTAINER.addClass("comment flex");
-    COMMENT_CONTAINER.append(IMAGE_CONTAINER);
-    COMMENT_CONTAINER.append(DETAILS_CONTAINER);
-
-    //adding comment
+    const COMMENT_CONTAINER = createCustomElement("div", { class: "comment flex" });
+    COMMENT_CONTAINER.append(IMAGE_CONTAINER, DETAILS_CONTAINER);
     COMMENT_FRAGMENT.append(COMMENT_CONTAINER);
   });
   $("#commentContainer").append(COMMENT_FRAGMENT);
@@ -96,10 +89,7 @@ const addComments = () => {
 const addPosters = () => {
   const POSTER_FRAGMENT = $(document.createDocumentFragment());
   $(posterData).each((index, poster) => {
-    const IMAGE = $("<img>");
-    IMAGE.attr("src", poster.imageUrl);
-    IMAGE.attr("alt", poster.title);
-    POSTER_FRAGMENT.append(IMAGE);
+    POSTER_FRAGMENT.append(createCustomElement("<img>", { src: poster.imageUrl, alt: poster.title }));
   });
   $("#postersContainer").append(POSTER_FRAGMENT);
 };

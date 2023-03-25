@@ -95,6 +95,10 @@ main div.container {
   line-height: 1.6;
 }
 
+.movies-section video {
+  width: 100%;
+}
+
 .comment-container > h3 {
   font-size: 1.13rem;
   font-weight: 600;
