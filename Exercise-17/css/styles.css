@@ -74,10 +74,10 @@ body {
 /* about section */
 
 .ui-tabs .ui-tabs-panel p {
-  font-size: 13.9px;
-  font-family: "roboto", sans-serif;
+  font-size: 12.7px;
+  font-family: 'Inter', sans-serif;
   font-weight: 300;
-  line-height: 1.45;
+  line-height: 1.55;
   margin-top: 8px;
 }
 
@@ -128,6 +128,7 @@ body {
 
 .ui-tabs .ui-tabs-panel .ui-accordion-content p {
   font-size: 11.5px;
+  margin-top: 0;
 }
 
 /* locations section */
