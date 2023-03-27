@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.justify-right {
+  justify-content: end;
+}
+
+.container {
+  width: 67.5%;
+  margin: 0 auto;
+}
+
+.width50 {
+  width: 50%;
+}
+
+/* header section */
+
+.header-content {
+  box-shadow: 0 0.31rem 0.62rem rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.logo h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.125rem 0;
+}
+
+.profile-name {
+  font-size: 0.68rem;
+  margin: 0 0.62rem;
+}
+
+.profile-image {
+  height: 1.56rem;
+  width: 1.56rem;
+  border-radius: 50%;
+}
+
+/* main section */
+
+main {
+  background-color: #f5f5f5;
+  width: 100%;
+  padding: 1.38rem 0;
+}
+
+main .container {
+  gap: 1.69rem;
+  align-items: start;
+}
+
+/* movies section */
+
+.movies-section {
+  width: 76.5%;
+}
+
+.video-container,
+.comment-container {
+  margin: 1.38rem 0;
+}
+
+.video-container h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.video-container p {
+  font-size: 0.81rem;
+  font-weight: 300;
+  margin-top: 0.88rem;
+  padding-right: 0.63rem;
+  line-height: 1.6;
+}
+
+.comment-container > h3 {
+  font-size: 1.13rem;
+  font-weight: 600;
+}
+
+.comment {
+  margin: 1.13rem 0;
+}
+
+.comment-image-container img {
+  height: 2.81rem;
+  width: 2.81rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.comment-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.38rem;
+}
+
+.comment-description {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.section-seperator {
+  border-top: 0.5px solid #d6d6d6;
+}
+
+/* projects section */
+
+.projects-section {
+  width: 23.5%;
+}
+
+.projects-section > h3 {
+  display: inline-block;
+  margin: 0.125rem 0 0.5rem;
+  font-weight: 600;
+  font-size: 1.13rem;
+  letter-spacing: 0.5px;
+}
+
+.projects-section img {
+  margin-bottom: 0.63rem;
+}
+
+/* footer section */
+
+.footer-content {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.81rem;
+  font-weight: 600;
+  padding: 1.38rem 0;
+}
+
+.copy-symbol {
+  font-size: 1.13rem;
+  margin: 0.25rem;
+}
+
+.message-icon {
+  position: fixed;
+  bottom: 2.19rem;
+  right: 2.19rem;
+  height: 3.88rem;
+  width: 3.88rem;
+  border-radius: 50%;
+  background-color: #c432ae;
+}
+
+.message-icon:hover {
+  cursor: pointer;
+}
+
+.message-icon i {
+  position: relative;
+  top: 1.13rem;
+  left: 0.94rem;
+  font-size: 1.5rem;
+}
+
+/* mobile styles */
+
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 20px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  /* header section */
+  .profile-name {
+    display: none;
+  }
+
+  .logo {
+    width: 70%;
+  }
+
+  .profile {
+    width: 30%;
+  }
+
+  .profile-image {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  /* main section */
+  main .container {
+    display: block;
+  }
+
+  .movies-section,
+  .projects-section {
+    width: 100%;
+  }
+
+  .comment {
+    align-items: start;
+  }
+
+  .video-container h2,
+  .comment-container > h3 {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .projects-section > h3 {
+    margin: 1.25rem 0 0.94rem;
+  }
+
+  /* footer section */
+  .footer-content div:nth-child(2) {
+    display: block;
+    text-align: center;
+  }
+
+  .footerLogo {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .copyrights {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .message-icon {
+    height: 5rem;
+    width: 5rem;
+    bottom: 3.2rem;
+    right: 1.38rem;
+  }
+
+  .message-icon i {
+    top: 1rem;
+    left: 0.8rem;
+    font-size: 2.75rem;
+  }
+}
