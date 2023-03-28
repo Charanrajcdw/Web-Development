@@ -310,4 +310,34 @@ body {
   border-radius: 4px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .main-content .cards-container .card {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main-content .cards-container .card {
+    width: 46.8%;
+  }
+  .center-modal {
+    width: 100%;
+  }
+  .side-modal {
+    width: 100%;
+  }
+  .side-modal .modal-footer .modal-color-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .side-modal .modal-footer i {
+    top: 5px;
+    left: 5px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .main-content .cards-container .card {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

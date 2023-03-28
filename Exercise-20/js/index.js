@@ -1,6 +1,6 @@
 let cardsData = [];
 let currentCard;
-let lastCardID = 16;
+let lastCardID = 0;
 let currentColor = "color-pink";
 
 /**
@@ -64,12 +64,12 @@ function goBack() {
   CARD_CONTAINER.addClass("hide");
   BACK_BUTTON.addClass("hide");
   CARDS_CONTAINER.removeClass("hide");
-  if (cardsData.length != $(".card").length) LOAD_MORE_BUTTON.removeClass("hide");
   DELETE_BUTTON.addClass("hide");
   EDIT_BUTTON.addClass("hide");
   DELETE_ALL_BUTTON.removeClass("hide");
   INSERT_BUTTON.removeClass("hide");
   CARD_CONTAINER.html("");
+  cardsData.length != $(".card").length ? LOAD_MORE_BUTTON.removeClass("hide") : LOAD_MORE_BUTTON.addClass("hide");
 }
 
 BACK_BUTTON.click(() => goBack());
@@ -236,7 +236,7 @@ INSERT_BUTTON.click(() => {
 });
 
 EDIT_BUTTON.click(() => {
-  const CARD_DATA = cardsData[currentCard];
+  const CARD_DATA = cardsData.find((card) => card.id === currentCard);
   MODAL_BG.removeClass("hide");
   SIDE_MODAL.removeClass("hide");
   $("body").css("overflow", "hidden");
@@ -272,7 +272,7 @@ MODAL_MODIFY_BUTTON.click(function () {
     lastCardID += 1;
   } else {
     noteObject.id = currentCard;
-    cardsData.splice(currentCard, 1);
+    cardsData = cardsData.filter((card) => card.id !== currentCard);
     goBack();
   }
   cardsData.unshift(noteObject);
