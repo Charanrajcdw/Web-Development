@@ -1,7 +1,34 @@
-let cardsData = [];
-let currentCard;
-let lastCardID = 0;
-let currentColor = "color-pink";
+if (localStorage.getItem("notesData") == null) {
+  localStorage.setItem(
+    "notesData",
+    JSON.stringify({
+      cardsData: [],
+      lastCardID: 0,
+      currentColor: "color-pink",
+    })
+  );
+}
+
+let { cardsData, lastCardID, currentColor } = JSON.parse(localStorage.getItem("notesData"));
+let currentCard = "";
+
+/**
+ * This function helps to store the data in local storage
+ *
+ * @param {*} appCardsData - the data of the notes cards
+ * @param {*} appLastCardID - the id of the next card to be created
+ * @param {*} appCurrentColor - the color of the card last created
+ */
+function setLocalData(appCardsData, appLastCardID, appCurrentColor) {
+  localStorage.setItem(
+    "notesData",
+    JSON.stringify({
+      cardsData: appCardsData,
+      lastCardID: appLastCardID,
+      currentColor: appCurrentColor,
+    })
+  );
+}
 
 /**
  * This functions helps to create a element with given attributes and innertext
@@ -21,6 +48,7 @@ function createCustomElement(tag, attributes, content) {
   }
   return element;
 }
+$(`#${currentColor}`).html(createCustomElement("<i>", { class: "fa-solid fa-check" }));
 
 //containers
 const EMPTY_CONTAINER = $("#emptyContainer");
@@ -88,6 +116,7 @@ CENTER_MODAL_CLOSE_BUTTON.click(() => {
   } else {
     CENTER_MODAL.addClass("hide");
     SIDE_MODAL.removeClass("hide");
+    SIDE_MODAL.css("right","0");
   }
 });
 
@@ -141,6 +170,7 @@ MODAL_DELETE_BUTTON.click(function () {
   } else {
     clearInputs();
   }
+  setLocalData(cardsData, lastCardID, currentColor);
   centerModalCloser();
 });
 
@@ -149,12 +179,12 @@ const inputValidationData = {
   noteTitle: {
     required: "Note Title is required",
     validation: "Note Title is not valid",
-    regex: /^.{1,100}$/,
+    regex: /^[\w\s]{1,100}$/,
   },
   noteContent: {
     required: "Note Content is required",
     validation: "Note Content is not valid",
-    regex: /^.{1,300}$/,
+    regex: /^[\w\s]{1,300}$/,
   },
 };
 
@@ -198,7 +228,7 @@ INPUT_TITLE.change(() => validate());
 INPUT_CONTENT.change(() => validate());
 
 Array.from(COLOR_ICONS).forEach((color) => {
-  $(color).click(() => {
+  $(color).click(function () {
     const CURRENT_COLOR = $(`#${currentColor}`);
     if (currentColor !== $(color).attr("id")) {
       currentColor = $(color).attr("id");
@@ -214,11 +244,13 @@ Array.from(COLOR_ICONS).forEach((color) => {
 function sideModalCloser() {
   MODAL_BG.addClass("hide");
   SIDE_MODAL.addClass("hide");
+  SIDE_MODAL.css("right", "-35%");
   $("body").css("overflow", "auto");
 }
 SIDE_MODAL_CLOSE_BUTTON.click(() => {
   SIDE_MODAL.addClass("hide");
   CENTER_MODAL.removeClass("hide");
+  SIDE_MODAL.css("right", "-35%");
   $("body").css("overflow", "hidden");
   $("#centerModalHeaderContent").text("CONFIRM");
   $("#centerModalContent").html(createCustomElement("<p>", {}, "Seems like you are in the middle of adding/editing content. Do you want to leave?"));
@@ -229,6 +261,7 @@ SIDE_MODAL_CLOSE_BUTTON.click(() => {
 INSERT_BUTTON.click(() => {
   MODAL_BG.removeClass("hide");
   SIDE_MODAL.removeClass("hide");
+  SIDE_MODAL.animate({ right: "0" }, "slow");
   $("body").css("overflow", "hidden");
   $("#sideModalHeaderContent").text("NEW NOTE");
   MODAL_MODIFY_BUTTON.attr("value", "add");
@@ -239,6 +272,7 @@ EDIT_BUTTON.click(() => {
   const CARD_DATA = cardsData.find((card) => card.id === currentCard);
   MODAL_BG.removeClass("hide");
   SIDE_MODAL.removeClass("hide");
+  SIDE_MODAL.animate({ right: "0" }, "slow");
   $("body").css("overflow", "hidden");
   $("#sideModalHeaderContent").text("EDIT NOTE");
   MODAL_MODIFY_BUTTON.attr("value", "edit");
@@ -274,8 +308,10 @@ MODAL_MODIFY_BUTTON.click(function () {
     noteObject.id = currentCard;
     cardsData = cardsData.filter((card) => card.id !== currentCard);
     goBack();
+    $(MODAL_MODIFY_BUTTON).attr("disabled", "disabled");
   }
   cardsData.unshift(noteObject);
+  setLocalData(cardsData, lastCardID, currentColor);
   CARDS_CONTAINER.html("");
   addCardsToHome();
   clearInputs();
@@ -292,7 +328,7 @@ function addCardsHelper(start, end) {
   const CARD_FRAGMENT = $(document.createDocumentFragment());
   for (let cardIterator = start; cardIterator < end; cardIterator++) {
     const TITLE = createCustomElement("<p>", {}, cardsData[cardIterator].cardTitle);
-    const DATE = createCustomElement("<span>", {}, cardsData[cardIterator].dateCreated.toDateString().slice(4));
+    const DATE = createCustomElement("<span>", {}, new Date(cardsData[cardIterator].dateCreated).toDateString().slice(4));
     let image;
     if (cardsData[cardIterator].cardImage) image = createCustomElement("<img>", { src: cardsData[cardIterator].cardImage });
     const CONTENT = createCustomElement("<p>", {}, cardsData[cardIterator].cardContent);
@@ -315,7 +351,6 @@ function addCardsToHome() {
     CARDS_CONTAINER.removeClass("hide");
     const CARDS_LENGTH = cardsData.length >= 10 ? 10 : cardsData.length;
     CARDS_CONTAINER.append(addCardsHelper(0, CARDS_LENGTH));
-    console.log(cardsData.length, $(".card").length);
     cardsData.length != $(".card").length ? LOAD_MORE_BUTTON.removeClass("hide") : LOAD_MORE_BUTTON.addClass("hide");
   }
 }

@@ -223,7 +223,7 @@ body {
     @include modal-container();
     height:100vh;
     top:0;
-    right:0;
+    right:-35%;
     padding:44px;
     z-index: 1;
     .modal-header{
@@ -294,18 +294,8 @@ body {
             }
         }
     }
-}
-
-@media only screen and (max-width:768px){
-    .main-content{
-        .cards-container{
-            .card{
-                width:46.8%;
-            }
-        }
-    }
     .center-modal{
-        width:100%;
+        width:75%;
     }
     .side-modal{
         width:100%;
@@ -319,6 +309,19 @@ body {
                 left:5px;
             }
         }
+    }
+}
+
+@media only screen and (max-width:768px){
+    .main-content{
+        .cards-container{
+            .card{
+                width:46.8%;
+            }
+        }
+    }
+    .center-modal{
+        width:100%;
     }
 }
 
