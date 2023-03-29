@@ -36,7 +36,7 @@ function addLocationDetails() {
   const TABLE = createCustomElement("<table>", { class: "location-table" });
   for (let location of locationData) {
     const ROW = $("<tr>");
-    const IMAGE = createCustomElement("<img>", { src: `assets/images/${location.country}.png` });
+    const IMAGE = createCustomElement("<img>", { src: `assets/images/${location.country}.png`, alt: `${location.country}` });
     ROW.append(createCustomElement("<td>", {}, IMAGE));
     ROW.append(createCustomElement("<td>", {}, location.state));
     ROW.append(createCustomElement("<td>", {}, location.city));
