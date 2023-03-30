@@ -4,26 +4,36 @@ let posterData;
 /**
  * This function fetches the videos data
  */
-const getVideoData = () => {
-  return $.ajax({
+(() => {
+  $.ajax({
     url: "https://mocki.io/v1/4da47fc5-bbf3-4e41-b35f-c88a584bc4b0",
     success: (data) => {
-      videoData = data;
+      addVideoDetails(data);
+      addComments(data);
+    },
+    error: (err) => {
+      console.log(err);
+      $("#videoContainer").html("Can't able to fetch the video");
+      $("#commentContainer").html("Can't able to fetch the comments");
     },
   });
-};
+})();
 
 /**
  * This function fetches the posters data
  */
-const getPosterData = () => {
-  return $.ajax({
+(() => {
+  $.ajax({
     url: "https://mocki.io/v1/8c9b378b-d248-4203-93b0-b8e7659ac346",
     success: (data) => {
-      posterData = data;
+      addPosters(data);
+    },
+    error: (err) => {
+      console.log(err);
+      $("#postersContainer").html("Can't able to fetch the posters");
     },
   });
-};
+})();
 
 /**
  * This functions helps to create a element with given attributes and innertext
@@ -47,22 +57,29 @@ function createCustomElement(tag, attributes, content) {
 /**
  * This function dynamically adds the video, videoTitle and videoDescription
  */
-const addVideoDetails = () => {
-  $("#videoContainer").append(
+const addVideoDetails = (videoData) => {
+  $("#videoContainer").prepend(
     createCustomElement("<video>", {
       src: videoData.videoUrl,
-      controls: true,
       poster: "https://www.slashcam.de/images/news/sprite_fright1-16857_PIC1.jpg",
     })
   );
+  $("#playButton").removeClass("hide");
   $("#videoDetailsContainer").append(createCustomElement("<h2>", {}, videoData.title));
   $("#videoDetailsContainer").append(createCustomElement("<p>", {}, videoData.description));
 };
 
+$("#playButton").click(() => {
+  $("#playButton").addClass("hide");
+  const VIDEO = $("#videoContainer video");
+  VIDEO.attr("controls", "controls");
+  VIDEO.trigger("play");
+});
+
 /**
  * This function dynamically creates the comment cards and adds it to commentContainer
  */
-const addComments = () => {
+const addComments = (videoData) => {
   const COMMENT_FRAGMENT = $(document.createDocumentFragment());
   $(videoData.comments).each((index, comment) => {
     // image container
@@ -76,7 +93,7 @@ const addComments = () => {
     DETAILS_CONTAINER.append(NAME_CONTAINER, DESCRIPTION_CONTAINER);
 
     //main container
-    const COMMENT_CONTAINER = createCustomElement("div", { class: "comment flex" });
+    const COMMENT_CONTAINER = createCustomElement("<div>", { class: "comment flex" });
     COMMENT_CONTAINER.append(IMAGE_CONTAINER, DETAILS_CONTAINER);
     COMMENT_FRAGMENT.append(COMMENT_CONTAINER);
   });
@@ -86,17 +103,10 @@ const addComments = () => {
 /**
  * This function dynamically creates the posters and adds it to postersContainer
  */
-const addPosters = () => {
+const addPosters = (posterData) => {
   const POSTER_FRAGMENT = $(document.createDocumentFragment());
   $(posterData).each((index, poster) => {
     POSTER_FRAGMENT.append(createCustomElement("<img>", { src: poster.imageUrl, alt: poster.title }));
   });
   $("#postersContainer").append(POSTER_FRAGMENT);
 };
-
-// adding dynamic data
-$.when(getVideoData(), getPosterData()).done(() => {
-  addVideoDetails();
-  addComments();
-  addPosters();
-});

@@ -66,7 +66,7 @@ main {
 }
 
 main div.container {
-  gap: 1.69rem;
+  gap: 1rem;
   align-items: start;
 }
 
@@ -85,6 +85,18 @@ main div.container {
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 1px;
+}
+
+.video-main-container {
+  position: relative;
+}
+
+.fa-circle-play {
+  position: absolute;
+  top: 42%;
+  left: 43.5%;
+  color: #ffffff;
+  font-size: 70px;
 }
 
 .video-container p {
@@ -287,4 +299,8 @@ main div.container {
     left: 1.38rem;
     font-size: 2.75rem;
   }
+}
+
+.hide {
+  display: none;
 }
