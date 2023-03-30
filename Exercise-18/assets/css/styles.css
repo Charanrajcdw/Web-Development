@@ -97,6 +97,7 @@ main div.container {
   left: 43.5%;
   color: #ffffff;
   font-size: 70px;
+  cursor: pointer;
 }
 
 .video-container p {
