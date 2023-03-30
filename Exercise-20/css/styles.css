@@ -149,7 +149,7 @@ body {
   font-weight: 300;
   line-height: 1.5;
   word-wrap: break-word;
-  overflow: hidden;
+  overflow: scroll;
 }
 .main-content button {
   display: block;
@@ -259,10 +259,15 @@ body {
   flex: 1 1 auto;
   width: 100%;
 }
+.side-modal .modal-content input {
+  font-size: 12px;
+}
 .side-modal .modal-content input, .side-modal .modal-content textarea {
+  padding: 8px;
   width: 100%;
   margin-top: 30px;
   font-size: 16px;
+  font-family: "Lato", sans-serif;
   background-color: #000000;
   color: #ffffff;
   border: none;
@@ -325,16 +330,23 @@ body {
     height: 30px;
   }
   .side-modal .modal-footer i {
-    top: 5px;
-    left: 5px;
+    top: 6px;
+    left: 6px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 768px) {
+  .modal-background {
+    background-color: rgba(4, 29, 46, 0.9);
+  }
   .main-content .cards-container .card {
     width: 46.8%;
   }
   .center-modal {
-    width: 100%;
+    width: 90%;
+  }
+  .center-modal .modal-content {
+    padding: 0 15px;
   }
 }
 @media only screen and (max-width: 576px) {

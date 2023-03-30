@@ -178,13 +178,13 @@ MODAL_DELETE_BUTTON.click(function () {
 const inputValidationData = {
   noteTitle: {
     required: "Note Title is required",
-    validation: "Note Title is not valid",
+    validation: "Title is too long, try to give within 100 characters",
     regex: /^[\w\s]{1,100}$/,
   },
   noteContent: {
     required: "Note Content is required",
     validation: "Note Content is not valid",
-    regex: /^[\w\s]{1,300}$/,
+    regex: /^[\S\s]+$/,
   },
 };
 
@@ -224,8 +224,8 @@ function validate() {
   else $(MODAL_MODIFY_BUTTON).attr("disabled", "true");
 }
 
-INPUT_TITLE.change(() => validate());
-INPUT_CONTENT.change(() => validate());
+INPUT_TITLE.on("keyup",() => validate());
+INPUT_CONTENT.on("keyup",() => validate());
 
 Array.from(COLOR_ICONS).forEach((color) => {
   $(color).click(function () {
@@ -276,7 +276,7 @@ EDIT_BUTTON.click(() => {
   $("body").css("overflow", "hidden");
   $("#sideModalHeaderContent").text("EDIT NOTE");
   MODAL_MODIFY_BUTTON.attr("value", "edit");
-  MODAL_MODIFY_BUTTON.text("EDIT");
+  MODAL_MODIFY_BUTTON.text("SAVE");
   $(MODAL_MODIFY_BUTTON).removeAttr("disabled");
   INPUT_TITLE.val(CARD_DATA.cardTitle);
   $("#imageURL").val(CARD_DATA.cardImage);
