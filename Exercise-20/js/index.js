@@ -50,6 +50,7 @@ function createCustomElement(tag, attributes, content) {
 }
 $(`#${currentColor}`).html(createCustomElement("<i>", { class: "fa-solid fa-check" }));
 
+const CARD_DISPLAY_COUNT = 10;
 //containers
 const EMPTY_CONTAINER = $("#emptyContainer");
 const CARD_CONTAINER = $("#cardContainer");
@@ -80,7 +81,9 @@ const COLOR_ICONS = $(".modal-color-icon");
 //button event listeners
 LOAD_MORE_BUTTON.click(() => {
   const CURRENT_CARDS_COUNT = $(".card").length;
-  const END = CURRENT_CARDS_COUNT + (cardsData.length - CURRENT_CARDS_COUNT >= 10 ? 10 : cardsData.length - CURRENT_CARDS_COUNT);
+  const END =
+    CURRENT_CARDS_COUNT +
+    (cardsData.length - CURRENT_CARDS_COUNT >= CARD_DISPLAY_COUNT ? CARD_DISPLAY_COUNT : cardsData.length - CURRENT_CARDS_COUNT);
   CARDS_CONTAINER.append(addCardsHelper(CURRENT_CARDS_COUNT, END));
   if (cardsData.length == $(".card").length) LOAD_MORE_BUTTON.addClass("hide");
 });
@@ -109,35 +112,43 @@ function centerModalCloser() {
   MODAL_BG.addClass("hide");
   CENTER_MODAL.addClass("hide");
   $("body").css("overflow", "auto");
+  $("#centerModalHeaderContent").text();
 }
+
+/**
+ * This function helps to open all center modals
+ *
+ * @param {String} headerText - the text to display in modal header
+ * @param {String} contentText - the text to display in modal content area
+ * @param {String} buttonValue - the value of the modal button
+ * @param {String} buttonText - the text to display in modal button
+ */
+function centerModalOpener(headerText, contentText, buttonValue, buttonText) {
+  MODAL_BG.removeClass("hide");
+  CENTER_MODAL.removeClass("hide");
+  $("body").css("overflow", "hidden");
+  $("#centerModalHeaderContent").text(headerText);
+  $("#centerModalContent").html(createCustomElement("<p>", {}, contentText));
+  MODAL_DELETE_BUTTON.attr("value", buttonValue);
+  MODAL_DELETE_BUTTON.text(buttonText);
+}
+
 CENTER_MODAL_CLOSE_BUTTON.click(() => {
   if (MODAL_DELETE_BUTTON.val() !== "close") {
     centerModalCloser();
   } else {
     CENTER_MODAL.addClass("hide");
     SIDE_MODAL.removeClass("hide");
-    SIDE_MODAL.css("right","0");
+    SIDE_MODAL.css("right", "0");
   }
 });
 
 DELETE_ALL_BUTTON.click(() => {
-  MODAL_BG.removeClass("hide");
-  CENTER_MODAL.removeClass("hide");
-  $("body").css("overflow", "hidden");
-  $("#centerModalHeaderContent").text("CONFIRM DELETE");
-  $("#centerModalContent").html(createCustomElement("<p>", {}, "Are you sure want to delete all notes?"));
-  MODAL_DELETE_BUTTON.attr("value", "deleteAll");
-  MODAL_DELETE_BUTTON.text("YES, DELETE");
+  centerModalOpener("CONFIRM DELETE", "Are you sure want to delete all notes?", "deleteAll", "YES, DELETE");
 });
 
 DELETE_BUTTON.click(() => {
-  MODAL_BG.removeClass("hide");
-  CENTER_MODAL.removeClass("hide");
-  $("body").css("overflow", "hidden");
-  $("#centerModalHeaderContent").text("CONFIRM DELETE");
-  $("#centerModalContent").html(createCustomElement("<p>", {}, "Are you sure want to delete this note?"));
-  MODAL_DELETE_BUTTON.attr("value", "delete");
-  MODAL_DELETE_BUTTON.text("YES, DELETE");
+  centerModalOpener("CONFIRM DELETE", "Are you sure want to delete all notes?", "delete", "YES, DELETE");
 });
 
 /**
@@ -224,8 +235,8 @@ function validate() {
   else $(MODAL_MODIFY_BUTTON).attr("disabled", "true");
 }
 
-INPUT_TITLE.on("keyup",() => validate());
-INPUT_CONTENT.on("keyup",() => validate());
+INPUT_TITLE.on("keyup", () => validate());
+INPUT_CONTENT.on("keyup", () => validate());
 
 Array.from(COLOR_ICONS).forEach((color) => {
   $(color).click(function () {
@@ -247,36 +258,30 @@ function sideModalCloser() {
   SIDE_MODAL.css("right", "-35%");
   $("body").css("overflow", "auto");
 }
-SIDE_MODAL_CLOSE_BUTTON.click(() => {
-  SIDE_MODAL.addClass("hide");
-  CENTER_MODAL.removeClass("hide");
-  SIDE_MODAL.css("right", "-35%");
-  $("body").css("overflow", "hidden");
-  $("#centerModalHeaderContent").text("CONFIRM");
-  $("#centerModalContent").html(createCustomElement("<p>", {}, "Seems like you are in the middle of adding/editing content. Do you want to leave?"));
-  MODAL_DELETE_BUTTON.attr("value", "close");
-  MODAL_DELETE_BUTTON.text("YES, CLOSE");
-});
 
-INSERT_BUTTON.click(() => {
+function sideModalOpener(headerText, buttonValue, buttonText) {
   MODAL_BG.removeClass("hide");
   SIDE_MODAL.removeClass("hide");
   SIDE_MODAL.animate({ right: "0" }, "slow");
   $("body").css("overflow", "hidden");
-  $("#sideModalHeaderContent").text("NEW NOTE");
-  MODAL_MODIFY_BUTTON.attr("value", "add");
-  MODAL_MODIFY_BUTTON.text("ADD");
+  $("#sideModalHeaderContent").text(headerText);
+  MODAL_MODIFY_BUTTON.attr("value", buttonValue);
+  MODAL_MODIFY_BUTTON.text(buttonText);
+}
+
+SIDE_MODAL_CLOSE_BUTTON.click(() => {
+  centerModalOpener("CONFIRM", "Seems like you are in the middle of adding/editing content. Do you want to leave?", "close", "YES, CLOSE");
+  SIDE_MODAL.addClass("hide");
+  SIDE_MODAL.css("right", "-35%");
+});
+
+INSERT_BUTTON.click(() => {
+  sideModalOpener("NEW NOTE", "add", "ADD");
 });
 
 EDIT_BUTTON.click(() => {
   const CARD_DATA = cardsData.find((card) => card.id === currentCard);
-  MODAL_BG.removeClass("hide");
-  SIDE_MODAL.removeClass("hide");
-  SIDE_MODAL.animate({ right: "0" }, "slow");
-  $("body").css("overflow", "hidden");
-  $("#sideModalHeaderContent").text("EDIT NOTE");
-  MODAL_MODIFY_BUTTON.attr("value", "edit");
-  MODAL_MODIFY_BUTTON.text("SAVE");
+  sideModalOpener("EDIT NOTE", "edit", "SAVE");
   $(MODAL_MODIFY_BUTTON).removeAttr("disabled");
   INPUT_TITLE.val(CARD_DATA.cardTitle);
   $("#imageURL").val(CARD_DATA.cardImage);
@@ -349,7 +354,7 @@ function addCardsToHome() {
     DELETE_ALL_BUTTON.addClass("hide");
   } else {
     CARDS_CONTAINER.removeClass("hide");
-    const CARDS_LENGTH = cardsData.length >= 10 ? 10 : cardsData.length;
+    const CARDS_LENGTH = cardsData.length >= CARD_DISPLAY_COUNT ? CARD_DISPLAY_COUNT : cardsData.length;
     CARDS_CONTAINER.append(addCardsHelper(0, CARDS_LENGTH));
     cardsData.length != $(".card").length ? LOAD_MORE_BUTTON.removeClass("hide") : LOAD_MORE_BUTTON.addClass("hide");
   }
