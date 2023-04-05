@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pocket Notes</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- external font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Slab:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- external css -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- header section start -->
+    <header class="header-content flex">
+      <div class="header-left-container flex">
+        <div class="hide" id="backButton">
+          <i class="fa-solid fa-arrow-left back-icon"></i>
+        </div>
+        <h1>Pocket <span> Notes</span></h1>
+      </div>
+      <div class="header-button-container" id="headerButtons">
+        <button class="button red-button" id="deleteAll">DELETE ALL</button>
+        <button class="button red-button hide" id="delete">DELETE</button>
+        <button class="button purple-button" id="insert">NEW</button>
+        <button class="button purple-button hide" id="edit">EDIT</button>
+      </div>
+    </header>
+    <!-- header section end -->
+
+    <!-- main section start -->
+    <main class="main-content">
+      <div class="empty-container flex hide" id="emptyContainer">
+        <img src="images/cube-image.png" alt="cube" />
+        <p>Notes you add appear here</p>
+      </div>
+      <div class="cards-container hide" id="cardsContainer"></div>
+      <button class="button purple-button hide" id="loadMoreButton">LOAD MORE</button>
+      <div class="card-container hide" id="cardContainer"></div>
+    </main>
+    <!-- main section end -->
+
+    <!-- modal section start -->
+    <div class="modal-background hide" id="modalBg"></div>
+    <!-- delete all modal start -->
+    <div class="center-modal flex hide" id="centerModal">
+      <div class="modal-header">
+        <p id="centerModalHeaderContent"></p>
+        <i class="fa-solid fa-xmark centerModalClose"></i>
+      </div>
+      <div class="modal-content" id="centerModalContent"></div>
+      <div class="modal-footer">
+        <button class="button purple-button" id="deleteButton" value=""></button>
+      </div>
+    </div>
+    <!-- delete all modal end -->
+
+    <!-- side modal start -->
+    <div class="side-modal flex hide" id="sideModal">
+      <div class="modal-header">
+        <p id="sideModalHeaderContent"></p>
+        <i class="fa-solid fa-xmark sideModalClose"></i>
+      </div>
+      <div class="modal-content">
+        <input type="text" placeholder="Notes Title" id="noteTitle" name="noteTitle" />
+        <p class="warning-message hide"></p>
+        <input type="text" placeholder="Add Image URL" id="imageURL" name="imageURL" />
+        <textarea name="noteContent" rows="12" placeholder="Add Content Here" id="noteContent"></textarea>
+        <p class="warning-message hide"></p>
+      </div>
+      <div class="modal-footer">
+        <div class="modal-color-icon color-pink" id="color-pink"></div>
+        <div class="modal-color-icon color-grey" id="color-grey"></div>
+        <div class="modal-color-icon color-orange" id="color-orange"></div>
+        <div class="modal-color-icon color-green" id="color-green"></div>
+        <div class="modal-color-icon color-sandal" id="color-sandal"></div>
+        <button class="button purple-button" id="modifyButton" disabled value=""></button>
+      </div>
+    </div>
+    <!-- side modal end -->
+
+    <!-- external js -->
+    <script src="./js/constants.js"></script>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
