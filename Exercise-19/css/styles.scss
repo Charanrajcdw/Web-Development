@@ -1,0 +1,178 @@
+$WHITE:#ffffff;
+$GREY:#cecece;
+$BLUE:#4b90e2;
+$GREEN:#b8e986;
+$BLACK:#000000;
+$PRIMARY_FONT: "Roboto", sans-serif;
+$SECONDARY_FONT: "Roboto Condensed", sans-serif;
+
+@mixin flex-property{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: $BLACK;
+	color: $WHITE;
+	font-family: $PRIMARY_FONT;
+}
+.details-header {
+	font-family: $SECONDARY_FONT;
+	position: relative;
+	text-align: center;
+	h1 {
+		font-size: 10.7rem;
+		font-weight: 300;
+		padding-top: 14rem;
+	}
+	h2 {
+		font-size: 3.6rem;
+		color: $GREY;
+		padding: 0.8rem;
+	}
+	p {
+		position: absolute;
+		font-size: 1.75rem;
+		font-weight: 700;
+		top: 4rem;
+		right: 11.2rem;
+	}
+}
+.second-name {
+	font-weight: 700;
+}
+.middle-word {
+	color: $BLUE;
+}
+.images {
+	@include flex-property();
+	width: 79%;
+	gap:30px;
+	margin: 9rem auto 9.8rem;
+	img {
+		width: calc((100% - 60px)/3);
+	}
+}
+.logos {
+	h2 {
+		text-align: center;
+		font-size: 3rem;
+		color: $GREY;
+		font-weight: 700;
+	}
+}
+.logo-title {
+	color: $GREEN;
+}
+.logo-container {
+	@include flex-property();
+	margin: 80px auto;
+	width: 77%;
+	column-gap: 50px;
+	align-items: center;
+	img {
+		max-width: 13%;
+		padding: 20px;
+	}
+}
+img.adidas {
+	padding: 38px;
+}
+img.mont {
+	padding: 34px;
+}
+.footer-content {
+	text-align: center;
+	margin-top: 14.25rem;
+}
+.line {
+	display: inline-block;
+	border-top: 1px solid #ffffff;
+	margin: 0 18px 0 18px;
+	&:first-of-type {
+		width: 35px;
+	}
+	&:nth-of-type(2) {
+		width: 225px;
+	}
+}
+.social-media-icons {
+	margin: 6.9rem auto 5.6rem;
+	i {
+		height: 50px;
+		width: 50px;
+		border: 1.5px solid #ffffff;
+		border-radius: 50%;
+		font-size: 28px;
+		padding: 10px;
+		margin: 0 9px;
+	}
+}
+.credits {
+	font-size: 22px;
+	font-weight: 500;
+	margin-bottom: 9rem;
+}
+@media only screen and (max-width: 576px) {
+	.details-header {
+		h1 {
+			font-size: 3.4rem;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+		p {
+			position: static;
+			font-size: 1rem;
+		}
+	}
+	.images {
+		width: 90%;
+		margin: 7rem auto 6.8rem;
+		img {
+			width: 100%;
+		}
+	}
+	.logos {
+		h2 {
+			font-size: 2rem;
+		}
+	}
+	.logo-container {
+		width: 65%;
+		row-gap: 40px;
+		img {
+			max-width: 35%;
+			padding: 1%;
+		}
+	}
+	img.adidas {
+		padding: 8%;
+	}
+	img.mont {
+		padding: 4%;
+	}
+	.footer-content {
+		margin-top: 10rem;
+	}
+	div.line {
+		&:first-of-type {
+			width: 25px;
+		}
+		&:nth-of-type(2) {
+			width: 125px;
+		}
+	}
+	.line {
+		margin: 0 10px 0 10px;
+	}
+	.social-media-icons {
+		margin: 4rem 0;
+	}
+}
